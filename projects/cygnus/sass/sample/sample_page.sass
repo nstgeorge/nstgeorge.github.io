@@ -1,0 +1,197 @@
+@import ../cygnus_colors
+@import sample_fonts
+
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap')
+
+$sections: 3
+
+$mobile-breakpoint: 768px
+
+@mixin vertical-flex
+  display: flex
+  flex-direction: column
+  align-items: center
+
+@mixin horizontal-flex
+  display: flex
+  flex-direction: row
+  align-items: center
+
+@mixin highlight
+  color: $cygnus-green
+  font-weight: bold
+
+body
+  @include vertical-flex
+  background: $cygnus-primary-background
+  font-family: $primary-font
+  color: $cygnus-primary-foreground
+  padding-top: 15vh
+
+.section
+  background: $cygnus-primary-background
+  border: 2px solid $cygnus-accent-background
+  border-radius: 5px
+  padding: 20px
+  margin: 10px
+  box-shadow: $cygnus-accent-background-translucent 5px 5px 0
+  opacity: 0
+  transition: transform .3s
+  animation: fadeIn .3s
+  animation-fill-mode: forwards
+
+  .header
+    font-size: .9em
+    margin-bottom: 10px
+
+  &:hover
+    transform: scale(1.07)
+
+.invisible-section
+  @extend .section
+  @include horizontal-flex
+  justify-content: center
+  background: none
+  border: none
+  box-shadow: none
+
+  &:hover
+    transform: none
+
+
+.header
+  font-family: $header-font !important
+  letter-spacing: 1px
+  text-transform: uppercase
+  color: $cygnus-secondary-foreground
+
+.terminal
+  font-family: $terminal-font
+
+.fake-browser
+  @include vertical-flex
+
+.main
+  @extend .section
+  width: 70%
+
+.tabbar
+  @include horizontal-flex
+  color: $cygnus-secondary-foreground
+  width: 100%
+
+.tab
+  border-left: 2px solid $cygnus-accent-background
+  padding: 0px 10px
+  border-top: 2px solid $cygnus-accent-background
+  font-size: .8em
+  flex-grow: 1
+
+  &:last-child
+    border-right: 2px solid $cygnus-accent-background
+
+  &.selected
+    background-color: $cygnus-accent-background
+    border-top: 2px solid $cygnus-cyan
+    color: $cygnus-primary-foreground
+
+.urlbar
+  @include horizontal-flex
+  justify-content: space-around
+  background-color: $cygnus-accent-background
+  width: 100%
+
+  svg
+    margin: 5px
+
+  .url-input
+    @include horizontal-flex
+    justify-content: left
+    flex-grow: 1
+    color: $cygnus-cyan
+    background-color: $cygnus-primary-background
+    border-radius: 3px
+    padding: 5px
+    margin: 5px
+
+svg.small
+  width: 16px
+  height: 16px
+
+a.small
+  font-size: .8em
+
+.button
+  @extend .section
+  text-decoration: none
+  color: $cygnus-green
+  background-color: $cygnus-primary-background
+  border: 1px solid $cygnus-green
+  border-radius: 5px
+  padding: 10px
+  cursor: pointer
+
+.link
+  color: $cygnus-cyan
+
+.fill-space
+  flex: 1
+
+.blue
+  color: $cygnus-blue
+
+.cyan
+  color: $cygnus-cyan
+
+.green
+  color: $cygnus-green
+
+.magenta
+  color: $cygnus-magenta
+
+.blink
+  animation: 1s blink infinite
+
+#headline
+  @include highlight
+  @extend .header
+  text-align: center
+  font-size: 3em
+  padding: 10px
+  border: 1px solid $cygnus-green
+  border-radius: 5px
+
+  #subtitle
+    font-size: .5em
+    color: $cygnus-primary-foreground
+    margin: 10px
+    text-transform: none
+
+#cygnus
+  background: url("../img/cygnus.jpg") center
+  filter: brightness(30%) hue-rotate(-20deg)
+  width: 100vw
+  height: 100vh
+  position: fixed
+  left: 0px
+  top: 0px
+  z-index: -1
+
+@for $i from 1 to $sections
+  .sections-container:nth-child(#{$i})
+    animation-delay: $i * .1s
+
+@keyframes blink
+  50%
+    opacity: 0
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+/* Mobile only rules  */
+@media (max-width: $mobile-breakpoint)
+  .hide-mobile
+    display: none

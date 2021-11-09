@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Instant Coffee</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <!-- CoffeeScript -->
+        <script src="http://cdn.jsdelivr.net/coffeescript/1.7.1/coffee-script.min.js"></script>
+
+        <!-- Bootstrap and dependencies -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <!-- Bootstrap Switch -->
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+        <!-- Ace Editor -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- BigDecimal -->
+        <script src="BigDecimal/MathContext.js"></script>
+        <script src="BigDecimal/BigDecimal.js"></script>
+
+        <!-- Math.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.4.1/math.min.js"></script>
+
+        <link rel="stylesheet" href="http://www.natestgeorge.com/style.css"> <!-- Universal site style -->
+        <link rel="stylesheet" href="style.css"> <!-- IC style -->
+        <link rel="stylesheet" href="darktheme.css"> <!-- Dark Theme style (immediately disabled) -->
+
+        <!-- ICONS FOR DAYS! -->
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicomatic/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicomatic/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicomatic/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicomatic/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/favicomatic/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/favicomatic/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/favicomatic/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicomatic/apple-touch-icon-152x152.png" />
+
+        <link rel="icon" type="image/png" href="img/favicomatic/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="img/favicomatic/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="img/favicomatic/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="img/favicomatic/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="img/favicomatic/favicon-128.png" sizes="128x128" />
+
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="img/favicomatic/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="img/favicomatic/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="img/favicomatic/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="img/favicomatic/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="img/favicomatic/mstile-310x310.png" />
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h1 class="huge centered page-header"><i id="title">Instant Coffee</i> <small id="bean">(~)</small></h1>
+                <hr>
+                <div id="editor" class="editor"></div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <pre id="console" class="console"></pre>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="options" class="options">
+                            <h3 class="centered">Options</h3>
+                            <hr>
+                            <div id="optionsContainer">
+                                <label class="checkbox lessImportant small">
+                                    <input id="jsEval" type="checkbox" data-toggle="toggle"> Evaluate as Javascript
+                                </label>
+                                <label class="checkbox lessImportant small">
+                                    <input id="dark" type="checkbox" data-toggle="toggle"> Lightswitch (Dark Theme)
+                                </label>
+                                <label class="checkbox lessImportant small">
+                                    <input id="wrap" type="checkbox" data-toggle="toggle"> Word Wrap in Console
+                                </label>
+                                <label class="checkbox lessImportant small">
+                                    <input id="panel" type="checkbox" data-toggle="toggle"> Show Custom UI Panel
+                                </label>
+                                <div class="btn btn-default menuBtn" data-toggle="modal" data-target="#saveModal">Save/Load Program</div> <br>
+                                <div class="btn btn-default menuBtn" data-toggle="modal" data-target="#cdnModal">Frameworks and Plugins</div> <br>
+                                <div class="btn btn-primary menuBtn" data-toggle="modal" data-target="#helpModal">Help</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+
+            <div class="customPanel" id="customPanel">
+                <span class="glyphicon glyphicon-remove panelCollapse"></span> <div class="centered title customPanelTitle"> <i> Custom Panel </i> </div>
+                <div class="lessImportant">
+                    You can change the content of this panel in your code to easily create a UI.
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="saveModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title title" id="myModalLabel"><i>Save or Load Program</i></h4>
+                    </div>
+                    <div class="modal-body tableContainer" id="savedTableContainer">
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="saveName" placeholder="Name of program..."></input>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary" id="save">Save</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cdnModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title title" id="myModalLabel"><i>Frameworks and Plugins</i> &nbsp;&nbsp;<small>Will reload after removing a CDN.</small></h4>
+                    </div>
+                    <div class="modal-body" id="cdnContainer">
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" id="cdnUrl" placeholder="CDN URL..."></input>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary" id="add">Add</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="helpModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title title"><i>Help</i></h4>
+                    </div>
+                    <div class="modal-body" id="helpContainer">
+                        <h5 class="title centered"><i>Instant Coffee</i>&nbsp;&nbsp;<small>Created by Nate St. George</small></h5>
+                        <p>
+                          Instant Coffee provides an easy way for programmers to create small tools for school, work, or other
+                          environments where quick, advanced calculations may be useful. IC also provides helpful features to
+                          streamline the process of creating a tool. <br>
+                          <b>Show/Out/Clear: </b> <br>
+                          The commands show, out, and clear provide the basis of console interaction in IC. Show will run JSON.stringify()
+                          on the argument before printing in the console. This way, you can see the contents of objects instead of
+                          [Object object], like what out returns. Out will simply print out the argument like console.log().
+                          Clear clears the console. <br>
+                          <b>Units: </b> <br>
+                          IC provides a library of precalculated units and conversions. It currently only supports units of length.
+                          However, these units are in the BigDecimal format, which allows for more accuracy in conversions like lightyears
+                          to planck lengths. To see the list of all available units, run show units or show u. While the actual numeric
+                          values are inaccessible in this way, you can still see the names of each unit. <br>
+                          <b>CDN Support: </b> <br>
+                          IC supports any code hosted on a CDN, including code you might write. This allows you to work as comfortably
+                          as you can in the environment. To add a CDN, simply click the Frameworks and Plugins button and paste the
+                          URL to the CDN in the box. To remove a CDN, click the X next to it. This will reload the page, but don't worry -
+                          code written in IC is persistent and automatically saved on every keyboard press. Speaking of which... <br>
+                          <b>Saving and Loading: </b> <br>
+                          You can save and load your code easily in IC. Just click Save/Load Program and name it. JS files will have a
+                          double slash before the name, while CoffeeScript will have a number sign/pound/hashtag/octothorpe. (Personally
+                          I think octothorpe is the best name for the # symbol.) <i> IC will not automatically switch evaluation modes.
+                          You must do this yourself. </i> <br>
+                          <b>The UI Panel: </b> <br>
+                          CustomPanel allows you to easily create a UI for your program. Run 'out CustomPanel.help' for help with this
+                          functionality. <br>
+                          <h5 class='title centered'> <i>Quick Tips </i> </h5>
+                          <ul>
+                            <li> Selecting a portion of your code will show you the value. </li>
+                            <li> Clicking the bean logo will fill the editor with a random bit of code. </li>
+                            <li> (Ctrl/cmd) + enter will rerun your code. </li>
+                            <li> JQuery is available by default when in JS mode. </li>
+                            <li> You are completely capable of changing the code of the website. You can break it if you want to. </li>
+                            <li> The dark theme looks even better than the default IMO. </li>
+                            <li> Save to your phone's homescreen for easy access. IC works on mobile! </li>
+                            <li> Since at least 2012, Ace Editor has had a bug where hitting shift on Android for some people acts like delete. I wish I could fix this, but I can't. </li>
+                          </ul>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="editor.js"></script>
+
+</html>

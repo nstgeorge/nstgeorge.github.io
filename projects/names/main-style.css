@@ -1,0 +1,314 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:300|Titillium+Web:300';
+
+
+html {
+    background-color: #EEE;
+    max-height:100vh;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+        
+    }
+    small {
+        font-size:0px !important; 
+    }
+    .header {
+        text-align: center;
+        height: 80px;
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    .linkActive {
+        max-width: 0% !important;
+    }
+    .imageHeaderContainer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        border-right: 0px solid black !important;
+        padding: 0px !important;
+    }
+    .newProjects {
+        margin-left: 6vw;
+    }
+    .pastProjects {
+        margin-left: 6vw;
+    }
+    .programmingHeader {
+        text-align: center !important;
+    }
+}
+
+a {
+    color: #333 !important;
+    text-decoration: none !important;
+}
+
+hr {
+    border-color: #AAA;
+    width:80%;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    font-size:20px;
+    background-color: #EEE;
+    padding-bottom: 50px;
+}
+
+body ::selection {
+    background:transparent;
+}
+
+.realBody {
+    margin-top: 130px;
+    background-color: #DEDEDE;
+    border-radius:5px;
+    padding-bottom: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+.icons {
+    width: 100vw;
+    text-align: center;
+}
+
+.header {
+    font-family: 'Titillium Web', sans-serif;
+    width:100vw;
+    position:fixed;
+    left:0px;
+    top:0px;
+    display:block;
+    margin:0px;
+    /*margin-left:10px;*/
+    background-color: #EEE;
+    border-bottom: 1px solid #AAA;
+    z-index: 5;
+    height:110px;
+}
+
+.expanded {
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 5px;
+}
+
+.expanded small {
+    letter-spacing: normal;
+}
+
+.light {
+    opacity: .4;
+}
+
+.bordered {
+    border: 1px solid #AAA;
+    border-radius: 10px;
+}
+
+.mainHeader {
+    max-height:175px;
+    font-size:5.5em;
+}
+
+.lessImportant {
+    font-size:1.15em;
+    color: #AAA;
+}
+
+.lessImportant:not(.glyphicon) {
+    font-family: 'Lato', sans serif;
+}
+
+.centered {
+    text-align: center;
+}
+
+.small {
+    font-size: 0.8em !important;
+}
+
+.loading {
+    animation: 2s rotate linear infinite;
+}
+
+.iconLabel {
+    display: inline-block;
+    vertical-align: middle;
+    height: inherit;
+    max-width: 0px;
+    overflow: hidden;
+    transition: .5s;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+.icon {
+    transition: .3s ease;
+    padding-right: 6.5vw;
+    padding-left: 6.5vw;
+}
+
+.imageHeaderContainer {            /* index */
+    margin-top: 30px;
+    position: relative;     
+    width:100%;
+    height: 10vh;
+    overflow:hidden;
+    border-radius: 5px;
+    display:table;
+}
+
+.imageHeaderContainer img {
+    position: absolute;
+    bottom:-190px;
+    left:-100px;
+    width: 1100px;
+    opacity: 0.35;
+}
+
+.indexHeader {
+    display:table-cell;
+    vertical-align: middle;
+    color: #000;
+}
+
+.programmingHeader {            /* programming */
+    text-align:center;
+}
+
+.bandcampLogo {                /* music */
+    transition: .2s;
+    display:inline-block;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.bandcampLogo:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.galleryImage:hover {            /* pictures */
+    cursor: url(//s.imgur.com/include/magnify.cur),default;
+}
+
+.programmingIcon:hover {
+    color:green;
+}
+
+.musicIcon:hover {
+    color:orange;
+}
+
+.picturesIcon:hover {
+    color:blue;
+}
+
+.thoughtsIcon:hover {
+    color: brown;
+}
+
+.programmingIcon:hover + .programmingLabel {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.programmingLabel:hover {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.musicIcon:hover + .musicLabel {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.musicLabel:hover {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.picturesIcon:hover + .picturesLabel {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.picturesLabel:hover {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.thoughtsIcon:hover + .thoughtsLabel {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.thoughtsLabel:hover {
+    max-width: 100%;
+    opacity: .8;
+}
+
+.linkActive {
+    max-width: 100%;
+    opacity: 1;
+}
+
+.programmingIcon.iconActive {
+    color:green;
+}
+
+.musicIcon.iconActive {
+    color:orange;
+}
+
+.picturesIcon.iconActive {
+    color:blue;
+}
+
+.thoughtsIcon.iconActive {
+    color: brown;
+}
+
+.iconLabel:not(.linkActive) {
+    max-width: 0% !important;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes makeLarger {
+    0% {
+        height:0px;
+    }
+    100% {
+        height:270px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    right: 10px;
+}
+::-webkit-scrollbar-track {
+    border-left: 1px solid #AAA;
+    /*border-radius: 10px;*/
+}
+::-webkit-scrollbar-thumb {
+    background-color:#AAA;
+    border-radius:10px;
+}

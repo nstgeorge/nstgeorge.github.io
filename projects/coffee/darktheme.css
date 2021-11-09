@@ -1,0 +1,41 @@
+body, html {
+    color: #EEE;
+    background: #141414;
+}
+
+.huge {
+    color: #CCC;
+    text-shadow: 0 0 8px #CCC;
+    border-bottom: 0 solid #141414 !important;
+}
+
+small {
+    color: #7FDBB6 !important;
+}
+
+.btn-primary {
+    border-color: #57d09f;
+    background-color: #7FDBB6;
+    color: #141414;
+}
+
+.btn-primary:hover {
+    background-color: #57d09f !important;
+    color: #141414;
+}
+
+.console, .options, .customPanel, .modal-content {
+    background: #212121 !important;
+}
+
+.customPanel {
+    border: 1px solid #CCC;
+}
+
+.modal-header, .modal-footer, td {
+    border-color: #444 !important;
+}
+
+hr {
+    border-color: #7FDBB6;
+}

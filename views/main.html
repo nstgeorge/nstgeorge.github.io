@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row top">
+    <div class="col-md-3 offset-md-1 text-center">
+      <img src="img/me.jpg" id="me" class="img-fluid rounded-circle" data-aos="fade" data-aos-delay="100" />
+    </div>
+    <div class='col-md-5 vert-center'>
+      <span id="hi" class="bold-heading text-center">Hi, I'm&nbsp;<span class="text-gradient">Nate</span>.</span>
+    </div>
+  </div>
+  <hr />
+
+<!-- Promo strip. Also, if you're looking at the website HTML, hi. -->
+<div id="promoStrip" class="row mt-5 justify-content-around">
+  <div class="mh-2"></div>
+  <a href="https://natestgeorge.bandcamp.com/"><i class="fab fa-bandcamp clickable hover-zoom"></i></a>
+  <a href="https://open.spotify.com/artist/0OuyQFGIe0a24m3NG0cplx?si=Jq5iY5VNRd-gpRLYV36NvQ"><i class="fab fa-spotify clickable hover-zoom"></i></a>
+  <a href="https://github.com/nstgeorge"><i class="fab fa-github clickable hover-zoom"></i></a>
+  <a href="https://www.linkedin.com/in/nate-st-george/"><i class="fab fa-linkedin clickable hover-zoom"></i></a>
+  <div class="mh-2"></div>
+</div>
+
+  <div class="row mt-5 justify-content-around">
+    <div class="round-corners hard-shadow col-md-5 bkgd-gradient p2 pb-4 clickable hover-zoom" ng-click="changeLocation('music')" ng-class="{'mx-2': mobile}" data-aos="fade-up">
+      <span class="bold-heading text-white mb-2">Music</span>
+      <div>
+        I write soundtrack and electronic music. Listen to it here!
+      </div>
+      <div class="full-width text-center">
+        <button class="btn btn-inverted mt-2" ng-click="changeLocation('music')">Listen</button>
+      </div>
+    </div>
+
+    <div class="round-corners hard-shadow col-md-5 inverted p2 pb-4 clickable hover-zoom" ng-click="changeLocation('code')" ng-class="{'mt-4': mobile, 'mx-2': mobile}" data-aos="fade-down">
+      <span class="bold-heading text-gradient mb-2">Code</span>
+      <div class="mb-2">
+        I make games, websites, and other things. You can check it out here!
+        <div class="full-width text-center">
+          <button class="btn btn-green mt-2" ng-click="changeLocation('code')">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

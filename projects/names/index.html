@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Username Generator</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <!-- Bootstrap and dependencies -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="sticky-footer.css"> <!-- For the footer -->
+
+        <link rel="stylesheet" href="http://natestgeorge.com/style.css"> <!-- Universal site style -->
+        <link rel="stylesheet" href="style.css"> <!-- local style -->
+
+    </head>
+
+    <body onload="doThisFirstSoThatEverythingWorks()">
+        <div class="container">
+            <div class="row">
+                <div class='col-md-2'></div>
+                <div class='col-md-8 centered'>
+                    <div class="huge centered page-header">Username Generator</div>
+                    <div class="centered light" id="quoteContainer"></div>
+                    <button class="btn btn-primary centered" onclick="javascript:generate()">New Username</button>
+                </div>
+                <div class='col-md-2'></div>
+            </div>
+        </div>
+
+        <footer class="footer vertical-center-container">
+            <div class="container-fluid footer-container">
+                <div class='row'>
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <p class="centered">
+                            &copy; Nate St. George. Go to the sister site <a href="http://quotes.natestgeorge.com">Bad Quotes</a>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <script src="markov.js"></script>
+    </body>

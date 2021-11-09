@@ -1,0 +1,38 @@
+[
+    {
+        "name": "VEKTA",
+        "url": "https://github.com/stgerger/vekta-processing",
+        "image": "vekta_crop.png",
+        "status": "Under development",
+        "date": "2018-2021",
+        "shortDesc": "An open source space explorer.",
+        "longDesc": "VEKTA is an open source procedurally generated infinite universe exploration game. Interact with NPCs and find new planets. Plenty of features are planned on being added soon. I designed the UI and created the physics for this game, among other things."
+    },
+    {
+        "name": "Better Clairvoyance",
+        "url": "https://github.com/StGerGer/sddm-better-clairvoyance",
+        "image": "better-clairvoyance.jpg",
+        "status": "Done",
+        "date": "December 2019",
+        "shortDesc": "A really nice SDDM theme.",
+        "longDesc": "I was tired of all the ugly login screens for Linux, so I customized an SDDM theme based on my needs and aesthetic choices."
+    },
+    {
+        "name": "Cygnus",
+        "url": "https://natestgeorge.com/projects/cygnus",
+        "image": "cygnus.jpg",
+        "status": "Done",
+        "date": "August 2019",
+        "shortDesc": "A universal theme.",
+        "longDesc": "Cygnus is a color theme for iTerm2, Firefox, and YouTube."
+    },
+    {
+        "name": "Muse File Manager",
+        "url": "https://natestgeorge.com/projects/muse",
+        "image": "muse.jpg",
+        "status": "Not actively developed",
+        "date": "November 2017",
+        "shortDesc": "A more organized file manager.",
+        "longDesc": "Muse was created as a way for me to organize my notes in college through tagging, file descriptions, and color coding."
+    }
+]

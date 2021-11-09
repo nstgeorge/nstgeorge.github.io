@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+    .huge {
+        font-size: 30px !important;
+    }
+    #quoteContainer {
+        font-size: 20px !important;
+    }
+}
+
+.huge {
+    font-size: 50px;
+}
+
+.btn {
+    font-family: 'Lato', sans-serif;
+}
+
+.vertical-center-container {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#quoteContainer {
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    text-transform: capitalize;
+    margin: 30px;
+}

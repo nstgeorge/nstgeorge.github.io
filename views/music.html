@@ -1,0 +1,16 @@
+<div id="page-container" class="container-fluid" ng-animate-children>
+  <div class="row justify-content-around">
+    <span class="bold-heading text-gradient mb-2" data-aos="fade-left">Music</span>
+  </div>
+  <hr />
+  <div class="row justify-content-around mb-4 project" ng-repeat="album in music">
+    <div class="col-md-3">
+      <img ng-src="{{album.img}}" class="img-fluid img-border round-corners hard-shadow clickable hover-zoom" ng-click="goToExternalSite(album.url)" />
+    </div>
+    <div class="col-md-7 left-vert-center" ng-class="{'mt-3': mobile}">
+      <a class="text-gradient clickable hover-zoom" ng-click="goToExternalSite(album.url)">{{album.title}}</a>
+      <span class="text-muted">{{album.year}}</span>
+      {{album.desc}}
+    </div>
+  </div>
+</div>

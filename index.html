@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <title>Nate St. George</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Angular + Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-animate.js"></script>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Particles -->
+    <script src="js/particles/particles.js"></script>
+
+    <!-- Feather Icons -->
+    <script src="//unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome -- for brands -->
+    <script src="https://kit.fontawesome.com/00144aefe3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/hamburgers.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/main.js"></script>
+
+</head>
+
+<body ng-app="app" ng-controller="appCtrl" scroll>
+    <div class="space-image-container">
+        <img src="img/cygnus_full.jpg" class="space-image">
+    </div>
+
+    <div id="particles" class="particles-js"></div>
+
+    <div id="header" ng-class="{attach: showHeader}">
+        <button class="hamburger hamburger--collapse show-mobile" ng-click="menuSwitch()" ng-class='{"is-active": menuActive}' type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <span ng-click="changeLocation('main')" class="clickable heading">Nate St. George</span>
+        <span class=""></span>
+        <div class="header-item-container">
+            <a ng-click="changeLocation('music')" class="header-item clickable btn-invisible hide-mobile">
+                <i class="header-icon" data-feather="music"></i>
+                Music
+            </a>
+            <a ng-click="changeLocation('code')" class="header-item clickable btn-invisible hide-mobile">
+                <i class="header-icon" data-feather="code"></i>
+                Code
+            </a>
+            <a href="https://github.com/nstgeorge" class="header-item clickable btn-invisible hide-mobile">
+                <i class="header-icon" data-feather="github"></i>
+                Github
+            </a>
+            <a href="https://natestgeorge.medium.com" class="header-item clickable btn-invisible hide-mobile">
+                <i class="header-icon" data-feather="file-text"></i>
+                Medium
+            </a>
+        </div>
+    </div>
+
+    <div id="topHeader">
+        <button class="hamburger hamburger--collapse show-mobile" ng-click="menuSwitch()" ng-class='{"is-active": menuActive}' type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
+        <span ng-click="changeLocation('main')" class="clickable heading">Nate St. George</span>
+        <span class=""></span>
+        <a ng-click="changeLocation('music')" class="header-item clickable btn-invisible hide-mobile">
+            <i class="header-icon" data-feather="music"></i>
+            Music
+        </a>
+        <a ng-click="changeLocation('code')" class="header-item clickable btn-invisible hide-mobile">
+            <i class="header-icon" data-feather="code"></i>
+            Code
+        </a>
+        <a href="https://github.com/nstgeorge" class="header-item clickable btn-invisible hide-mobile">
+            <i class="header-icon" data-feather="github"></i>
+            Github
+        </a>
+        <a href="https://natestgeorge.medium.com" class="header-item clickable btn-invisible hide-mobile">
+            <i class="header-icon" data-feather="file-text"></i>
+            Medium
+        </a>
+    </div>
+
+    <div id="sideMenu" ng-class="{active: menuActive}">
+        <div class="side-item-container">
+            <a ng-click="changeLocation('music')" class="side-item clickable btn-invisible">
+                <i class="header-icon" data-feather="music"></i>
+                Music
+            </a>
+            <a ng-click="changeLocation('code')" class="side-item clickable btn-invisible">
+                <i class="header-icon" data-feather="code"></i>
+                Code
+            </a>
+            <a href="https://github.com/nstgeorge" class="side-item clickable btn-invisible">
+                <i class="header-icon" data-feather="github"></i>
+                Github
+            </a>
+            <a href="https://natestgeorge.medium.com" class="side-item clickable btn-invisible">
+                <i class="header-icon" data-feather="file-text"></i>
+                Medium
+            </a>
+        </div>
+
+        <div id="openSourceMobile">
+            <span>Icons provided by <a href="https://feathericons.com">Feather</a> under MIT License.</span>
+            <span>Particles provided by <a href="https://github.com/VincentGarreau/particles.js/">Particles.js</a> under MIT License.</span>
+        </div>
+    </div>
+
+    <div ng-view class="page no-animate"></div>
+
+    <div id="footer">
+        <div>
+            <span id="copyText" class="text-muted">
+                 &copy; Nate St. George
+            </span>
+        </div>
+
+        <div class="text-muted hide-mobile" id="openSource">
+                <span>Icons provided by <a href="https://feathericons.com">Feather</a> under MIT License.</span>
+                <span>Particles provided by <a href="https://github.com/VincentGarreau/particles.js/">Particles.js</a> under MIT License.</span>
+        </div>
+    </div>
+
+    <!-- Particles -->
+    <script src="js/particlesLoad.js"></script>
+
+    <!-- Feather replace icons -->
+    <script>
+        feather.replace()
+    </script>
+
+    <!-- Bootstrap dependencies -->
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

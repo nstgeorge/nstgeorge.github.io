@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+    .huge {
+        font-size: 30px !important;
+    }
+    #quoteContainer {
+        font-size: 20px !important;
+    }
+}
+
+.huge {
+    font-size: 50px;
+}
+
+.btn {
+    font-family: 'Lato', sans-serif;
+}
+
+#quoteContainer {
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    margin: 30px;
+}

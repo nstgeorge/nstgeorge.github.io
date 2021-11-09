@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Material+Icons');
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Open Sans";
+  overflow-x: hidden;
+}
+
+.full {
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.dark {
+  color: #F1F1F1;
+  background-color: #323342;
+}
+
+.flex-center-full {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-child-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.fill-last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fill-last-child:last-child {
+  flex: 1;
+}
+
+.large {
+  font-size: 1.3rem;
+}
+
+.btn, .clickable {
+  cursor: pointer;
+}
+
+.superscript {
+  font-size: 1rem;
+  vertical-align: top;
+  color: #f0ad4e;
+}
+
+a.download {
+  color: #f0ad4e;
+}
+
+a.download:focus {
+  color: #f0ad4e;
+}
+
+a.download:hover {
+  color: #f0ad4e;
+  opacity: 0.8;
+}
+
+#descriptionText {
+  display: inline-block;
+  width: 100px;
+  overflow: visible;
+  animation: fade 4s linear infinite;
+}
+
+#downPointer {
+  animation: point-down 6s infinite;
+}
+
+#footer {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes point-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:not(.no-animate) {
+  transition: 0.2s;
+}

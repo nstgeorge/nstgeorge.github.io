@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Montserrat:100,200");
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #121219;
+  font-family: "Open Sans", sans-serif;
+  color: #E4F1EA;
+  padding-top: 15vh;
+}
+
+.section, .button, .main, .invisible-section {
+  background: #121219;
+  border: 2px solid #1d1d28;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: rgba(29, 29, 40, 0.76) 5px 5px 0;
+  opacity: 0;
+  transition: transform 0.3s;
+  animation: fadeIn 0.3s;
+  animation-fill-mode: forwards;
+}
+.section .header, .section #headline, .button .header, .button #headline, .main .header, .main #headline, .invisible-section .header, .invisible-section #headline {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.section:hover, .button:hover, .main:hover, .invisible-section:hover {
+  transform: scale(1.07);
+}
+
+.invisible-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.invisible-section:hover {
+  transform: none;
+}
+
+.header, #headline {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9A9098;
+}
+
+.terminal {
+  font-family: "Inconsolata", monospace;
+}
+
+.fake-browser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  width: 70%;
+}
+
+.tabbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #9A9098;
+  width: 100%;
+}
+
+.tab {
+  border-left: 2px solid #1d1d28;
+  padding: 0 10px;
+  border-top: 2px solid #1d1d28;
+  font-size: 0.8em;
+  flex-grow: 1;
+}
+.tab:last-child {
+  border-right: 2px solid #1d1d28;
+}
+.tab.selected {
+  background-color: #1d1d28;
+  border-top: 2px solid #1EEAF0;
+  color: #E4F1EA;
+}
+
+.urlbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #1d1d28;
+  width: 100%;
+}
+.urlbar svg {
+  margin: 5px;
+}
+.urlbar .url-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  flex-grow: 1;
+  color: #1EEAF0;
+  background-color: #121219;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+}
+
+svg.small {
+  width: 16px;
+  height: 16px;
+}
+
+a.small {
+  font-size: 0.8em;
+}
+
+.button {
+  text-decoration: none;
+  color: #1AF095;
+  background-color: #121219;
+  border: 1px solid #1AF095;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.link {
+  color: #1EEAF0;
+}
+
+.fill-space {
+  flex: 1;
+}
+
+.blue {
+  color: #2BAAAE;
+}
+
+.cyan {
+  color: #1EEAF0;
+}
+
+.green {
+  color: #1AF095;
+}
+
+.magenta {
+  color: #F01A77;
+}
+
+.blink {
+  animation: 1s blink infinite;
+}
+
+#headline {
+  color: #1AF095;
+  font-weight: 100;
+  text-align: center;
+  font-size: 3em;
+  padding: 10px;
+  border: 1px solid #1AF095;
+  border-radius: 5px;
+}
+#headline #subtitle {
+  font-size: 0.5em;
+  color: #E4F1EA;
+  margin: 10px;
+  text-transform: none;
+  font-weight: 200;
+}
+
+#cygnus {
+  background: url("../img/cygnus.jpg") no-repeat center;
+  background-size: auto 100%;
+  filter: brightness(30%) hue-rotate(-20deg);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.sections-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.sections-container:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Mobile only rules  */
+@media (max-width: 1024px) {
+  body {
+    font-size: 2.5em;
+  }
+
+  .sections-container {
+    width: 90vw;
+  }
+
+  .section, .invisible-section, .main, .button {
+    margin: 30px 0;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=sample_page.css.map */
